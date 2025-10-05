@@ -6,7 +6,6 @@ python train.py model=LightGCN hash_type=GraphHash dataset=Beauty resolution=200
 python train.py model=LightGCN hash_type=Leiden dataset=Beauty resolution=201
 python train.py model=LightGCN hash_type=BACO dataset=Beauty resolution=0.1308
 
-
 # For Gowalla
 python train.py model=LightGCN hash_type=full dataset=Gowalla
 python train.py model=LightGCN hash_type=GraphHash dataset=Gowalla resolution=200
