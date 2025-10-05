@@ -6,9 +6,9 @@ Balanced Co-Clustering of Users and Items for Embedding Table Compression in Rec
 -------------
 * Please refer to ```requirements.txt``` to install all the dependencies required for running the algorithm
 * Please enter the ```code``` directory before running the command.
-* Please run ```code/setup.sh``` to compile the core components implemented in Cython.
+* Please run ```\code\setup.sh``` to compile the core components implemented in Cython.
 ### Dataset
-* Preprocessed datasets are available at ```code/datasets```
+* Preprocessed datasets are available at ```\code\datasets```
 
 * Raw datasets: $Beauty$ is from the paper $\texttt{DirectAU}$ ([link](https://github.com/THUwangcy/DirectAU)); $Gowalla$, $Yelp2018$, and $AmazonBook$ are from the paper $\texttt{GraphHash}$ ([link](https://github.com/snap-research/GraphHash)).
 
@@ -32,4 +32,4 @@ cd code
 python train.py model=LightGCN hash_type=BACO dataset=Gowalla resolution=7.57
 ```
 
-More commands for running are provided in ```code/commands.sh```, with the best searched hyperparameters.
+More commands for running are provided in ```\code\commands.sh```, with the best searched hyperparameters.
