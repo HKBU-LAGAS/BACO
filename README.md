@@ -32,4 +32,4 @@ cd code
 python train.py model=LightGCN hash_type=BACO dataset=Gowalla resolution=7.57
 ```
 
-More commands for running are provided in ```commands.sh```, with the best searched hyperparameters.
+More commands for running are provided in ```code/commands.sh```, with the best searched hyperparameters.
