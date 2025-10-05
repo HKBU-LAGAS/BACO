@@ -8,7 +8,7 @@ Balanced Co-Clustering of Users and Items for Embedding Table Compression in Rec
 * Please run ```code/setup.sh``` to compile the core components implemented in Cython.
 * Please enter the ```code``` directory before running the command.
 ### Dataset
-* Preprocessed datasets are available at /code/datasets
+* Preprocessed datasets are available at ```code/datasets```
 
 * Raw datasets: $Beauty$ is from the paper $\texttt{DirectAU}$ ([link](https://github.com/THUwangcy/DirectAU)); $Gowalla$, $Yelp2018$, and $AmazonBook$ are from the paper $\texttt{GraphHash}$ ([link](https://github.com/snap-research/GraphHash)).
 
