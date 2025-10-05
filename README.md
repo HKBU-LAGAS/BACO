@@ -16,10 +16,10 @@ Balanced Co-Clustering of Users and Items for Embedding Table Compression in Rec
 
 ------
 We conduct experiments on four datasets:
-- **Beauty**: A dataset presenting user feedback and ratings for beauty products.
-- **Gowalla**: A social network dataset with user check-in data.
-- **Yelp2018**: A dataset containing user reviews and ratings for businesses.
-- **AmazonBook**: A dataset containing user reviews and ratings for books.
+- $Beauty$: A dataset presenting user feedback and ratings for beauty products.
+- $Gowalla$: A social network dataset with user check-in data.
+- $Yelp2018$: A dataset containing user reviews and ratings for businesses.
+- $AmazonBook$: A dataset containing user reviews and ratings for books.
 
 ### Run experiments
 
