@@ -5,8 +5,8 @@ Balanced Co-Clustering of Users and Items for Embedding Table Compression in Rec
 
 -------------
 * Please refer to ```requirements.txt``` to install all the dependencies required for running the algorithm
-* Please run ```code/setup.sh``` to compile the core components implemented in Cython.
 * Please enter the ```code``` directory before running the command.
+* Please run ```code/setup.sh``` to compile the core components implemented in Cython.
 ### Dataset
 * Preprocessed datasets are available at ```code/datasets```
 
