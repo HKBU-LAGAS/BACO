@@ -1,0 +1,16 @@
+hash_type: full
+epoch: 1000
+vis_device: 0
+n_iter: 5
+resolution: 1.0
+train_opt: True
+update_opt: 0
+user_weight: 'degree'
+item_weight: 'CPM'
+mod_type: 'dugue'
+save_dir: 'results'
+Secondary_Clusters: False
+defaults:
+ - _self_
+ - dataset: Gowalla
+ - model: LightGCN
