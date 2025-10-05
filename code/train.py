@@ -75,6 +75,7 @@ def main(config):
         run_name = f"{model_name}_{dataset}_hash_{hash_type}_res_{config.resolution}"
     # Initialize log
     record_dir = config.save_dir
+    os.makedirs(record_dir, exist_ok=True)
     if config.Secondary_Clusters == True:
         run_name += '_Secondary'
     mylog = Logger(record_dir, run_name + '.txt')
