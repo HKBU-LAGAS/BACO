@@ -44,6 +44,7 @@ def main(config):
     k = config.dataset.k
     hash_type = config.hash_type
     resolution = config.dataset.resolution
+    budget = config.dataset.budget
     loss = config.dataset.loss
     target = config.model._target_
     model_name = target.split(".")[-1]
@@ -306,42 +307,7 @@ def main(config):
                 n_iter=config.n_iter,
                 weight_scheme=weight_scheme,
                 mylog=mylog,
-            )
-        elif hash_type == "spectral_label_overlap_item":
-            weight_scheme = {'user': 'degree', 'item': 'CPM'}
-            if config.user_weight == None or config.item_weight == None:
-                raise ValueError('weight_type is None!')
-            else:
-                weight_scheme['user'] = config.user_weight
-                weight_scheme['item'] = config.item_weight
-            print('weight_scheme:', weight_scheme)
-            mylog.write_summary(weight_scheme)
-            cluster_cost, user_clusters, item_clusters, num_users_clusters, num_items_clusters, label_row, label_col = HashMethod.spectral_label_overlap_item_hash(
-                biadjacency,
-                num_users_clusters,
-                num_items_clusters,
-                resolution=config.resolution,
-                n_iter=config.n_iter,
-                weight_scheme=weight_scheme,
-                mylog=mylog,
-            )
-        elif hash_type == "spectral_label_overlap_double":
-            weight_scheme = {'user': 'degree', 'item': 'CPM'}
-            if config.user_weight == None or config.item_weight == None:
-                raise ValueError('weight_type is None!')
-            else:
-                weight_scheme['user'] = config.user_weight
-                weight_scheme['item'] = config.item_weight
-            print('weight_scheme:', weight_scheme)
-            mylog.write_summary(weight_scheme)
-            cluster_cost, user_clusters, item_clusters, num_users_clusters, num_items_clusters, label_row, label_col = HashMethod.spectral_label_overlap_double_hash(
-                biadjacency,
-                num_users_clusters,
-                num_items_clusters,
-                resolution=config.resolution,
-                n_iter=config.n_iter,
-                weight_scheme=weight_scheme,
-                mylog=mylog,
+                budget=budget,
             )
         else :
             raise NotImplementedError(f'Double type is not implement {hash_type}!')
