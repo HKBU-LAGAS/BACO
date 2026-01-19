@@ -299,6 +299,7 @@ def main(config):
                 weight_scheme['item'] = config.item_weight
             print('weight_scheme:', weight_scheme)
             mylog.write_summary(weight_scheme)
+            budget = (budget * embedding_dim - num_total_users) // embedding_dim
             cluster_cost, user_clusters, item_clusters, num_users_clusters, num_items_clusters, label_row, label_col = HashMethod.spectral_label_overlap_hash(
                 biadjacency,
                 num_users_clusters,
