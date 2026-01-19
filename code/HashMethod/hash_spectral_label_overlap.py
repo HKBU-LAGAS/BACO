@@ -9,7 +9,7 @@ def spectral_label_overlap_hash(
     num_users_c,
     num_items_c,
     resolution=1.0,
-    n_iter=5,
+    n_iter=8,
     random_state=2025,
     weight_scheme={'user': 'degree', 'item': 'degree'},
     mylog=None,
