@@ -21,12 +21,12 @@ def spectral_label_overlap_hash(
     n_node = num_user + num_item
     max_cluster = num_user + num_item
     labels = np.arange(max_cluster, dtype=np.int64)
-    prob_labels = np.zeros(max_cluster, dtype=np.float64)
+    prob_labels = np.zeros(max_cluster, dtype=np.float32)
     adj = build_block(biadjacency)
     user_deg = np.asarray(biadjacency.sum(axis=1)).squeeze()
     item_deg = np.asarray(biadjacency.sum(axis=0)).squeeze()
     if weight_scheme['user'] == 'CPM':  # 1
-        user_value = np.ones(num_user, dtype=np.float64)
+        user_value = np.ones(num_user, dtype=np.float32)
     elif weight_scheme['user'] == 'degree':  # 2
         user_value = user_deg
     elif weight_scheme['user'] == 'sqrt':  # 3
@@ -39,7 +39,7 @@ def spectral_label_overlap_hash(
     user_weight = user_value / user_sqrt_sum
 
     if weight_scheme['item'] == 'CPM':
-        item_value = np.ones(num_item, dtype=np.float64)
+        item_value = np.ones(num_item, dtype=np.float32)
     elif weight_scheme['item'] == 'degree':
         item_value = np.asarray(biadjacency.T.sum(axis=1)).squeeze()
     elif weight_scheme['item'] == 'sqrt':
@@ -55,10 +55,10 @@ def spectral_label_overlap_hash(
     sum_edge = 1
     indptr = adj.indptr.astype(np.int64)
     indices = adj.indices.astype(np.int64)
-    data = adj.data.astype(np.float64)
-    deg = deg.astype(np.float64)
-    # cluster_sum_U = np.concatenate([user_weight, np.zeros(num_item, dtype=np.float64)])
-    # cluster_sum_I = np.concatenate([np.zeros(num_user, dtype=np.float64), item_weight])
+    data = adj.data.astype(np.float32)
+    deg = deg.astype(np.float32)
+    # cluster_sum_U = np.concatenate([user_weight, np.zeros(num_item, dtype=np.float32)])
+    # cluster_sum_I = np.concatenate([np.zeros(num_user, dtype=np.float32), item_weight])
     cluster_sum_U = deg.copy()
     cluster_sum_I = deg.copy()
 
