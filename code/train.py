@@ -56,7 +56,7 @@ def main(config):
                       'SBC', "SCC",
                       ]
     DoubleHash_list = ["double", "double_frequency", "double_graph",]
-    Multi_list = ["BACO", "spectral_label_overlap_item", "spectral_label_overlap_double"]
+    Multi_list = ["BACO"]
 
     # Create a run name using the hyperparameters
     if hash_type in ['spectral_label_Test']:
@@ -364,7 +364,7 @@ def main(config):
     mylog.write(hash_type + ' cluster number:' + str(num_users_clusters)+' '+str(num_items_clusters)+'\n', is_terminal=0)
 
     # Initialize model, loss function, and optimizer
-    if loss in ["BPR", "DAU", "iALS"]: # retrieval
+    if loss in ["BPR"]: # retrieval
         mylog.write_summary({"Number of Layer": num_layers})
         model = instantiate(
             config.model,
