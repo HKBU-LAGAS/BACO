@@ -13,6 +13,7 @@ def spectral_label_overlap_hash(
     random_state=2025,
     weight_scheme={'user': 'degree', 'item': 'degree'},
     mylog=None,
+    budget=None,
 ):
     time_begin = time.time()
     rng = np.random.default_rng(random_state)
@@ -62,6 +63,7 @@ def spectral_label_overlap_hash(
     cluster_sum_I = deg.copy()
 
     for t in range(n_iter):
+        if len(set(labels[:num_user]))+len(set(labels[num_user:])) <= budget : break
         nodes = rng.permutation(n_node)
         spectral_label_core(
             num_user, num_item,
