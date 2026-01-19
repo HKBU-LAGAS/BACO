@@ -9,23 +9,23 @@ from cython.operator cimport dereference as deref, preincrement as preinc
 @cython.boundscheck(False)
 @cython.wraparound(False)
 def spectral_label_core(
-        int num_user,
-        int num_item,
+        long num_user,
+        long num_item,
         cnp.ndarray[long] nodes,
         cnp.ndarray[long] indptr,
         cnp.ndarray[long] indices,
-        cnp.ndarray[double] data,
-        cnp.ndarray[double] deg,
-        double sum_edge,
-        double resolution,
-        cnp.ndarray[double] edge_weight,
+        cnp.ndarray[float] data,
+        cnp.ndarray[float] deg,
+        float sum_edge,
+        float resolution,
+        cnp.ndarray[float] edge_weight,
         cnp.ndarray[long] labels,
-        cnp.ndarray[double] cluster_sum_U,
-        cnp.ndarray[double] cluster_sum_I,
-        int update_opt,
+        cnp.ndarray[float] cluster_sum_U,
+        cnp.ndarray[float] cluster_sum_I,
+        long update_opt,
 ):
     cdef long i, idx, x, l, y, start, end, label_target, label_best
-    cdef double value, max_val
+    cdef float value, max_val
     cdef unordered_set[long] label_set  # 使用C++ unordered_set
     cdef unordered_set[long].iterator it  # 声明迭代器
 
